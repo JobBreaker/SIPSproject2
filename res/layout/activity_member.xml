@@ -1,0 +1,84 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MemberActivity"
+    android:background="@drawable/shoping1"
+     >
+
+    <RelativeLayout
+        android:id="@+id/member_login_box"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+         >
+
+	<TextView
+	    android:id="@+id/member_label"
+	    android:layout_height="@dimen/member_label"
+	    android:layout_width="wrap_content"
+	    android:gravity="center"
+	    android:textColor="#FFFFFF"
+	    android:text="@string/member_label"
+	    android:layout_alignParentTop="true"
+	    android:layout_marginLeft="@dimen/activity_vertical_margin"
+	    android:textSize="@dimen/large_textsize1"
+		android:textStyle="bold"	    
+	    />
+    <EditText
+        android:id="@+id/member_id_box"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/custom_button_height"
+        android:layout_marginLeft="@dimen/activity_vertical_margin"
+        android:layout_below="@id/member_label"
+        android:hint="@string/memberId"
+        android:textColor="@android:color/white"
+        android:ems="10" 
+        >
+        <requestFocus />
+    </EditText>
+
+    <EditText
+        android:id="@+id/member_pass_box"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/custom_button_height"
+        android:layout_marginLeft="@dimen/activity_vertical_margin"
+        android:ems="10"
+        android:layout_marginTop="10dp"
+        android:inputType="textPassword" 
+        android:layout_below="@id/member_id_box"
+        android:hint="@string/password"
+        android:textColor="@android:color/white"
+        />
+    
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/custom_button_height"
+        android:layout_marginLeft="@dimen/activity_vertical_margin"
+        android:orientation="horizontal"
+        android:layout_below="@id/member_pass_box"
+        >
+        <Button 
+            android:id="@+id/butt_member_login"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.0"
+            android:text="@string/butt_login"
+            />
+              <Button 
+            android:id="@+id/butt_member_regis"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.0"
+            android:text="@string/butt_regis"
+            />
+        
+    </LinearLayout>
+
+    </RelativeLayout>
+	
+
+
+</RelativeLayout>

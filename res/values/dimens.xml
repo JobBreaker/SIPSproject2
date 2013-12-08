@@ -1,0 +1,44 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    
+    <!-- main layout -->
+    <dimen name="home_button_width">115dp</dimen>
+    <dimen name="home_button_height">45dp</dimen>
+    <dimen name="home_button_margin_right">15dp</dimen>
+    <dimen name="home_button_margin_top">30dp</dimen>
+    <dimen name="padding_size">5dp</dimen>
+    <dimen name="padding_bottom_parent">20dp</dimen>
+    <dimen name="padding_bottom_to_bottom">8dp</dimen>
+    
+    <!-- home layout -->
+    <dimen name="about_detail_height">200dp</dimen>
+    
+    <!-- custom button -->
+    <dimen name="custom_button_height">62dp</dimen>
+    <dimen name="custom_button_width">106dp</dimen>
+    <dimen name="custom_button_tracking_height">62dp</dimen>
+    
+    
+    <!-- text label -->
+    <dimen name ="member_label">40dp</dimen>
+    <!-- Text Size -->
+    <dimen name="small_textsize1">10sp</dimen>
+    <dimen name="small_textsize2">12sp</dimen>
+    <dimen name="small_textsize3">15sp</dimen>
+    <dimen name="normal_textsize1">17sp</dimen>
+    <dimen name="normal_textsize2">19sp</dimen>
+    <dimen name="large_textsize1">25sp</dimen>
+    <dimen name="large_textsize2">28sp</dimen>
+    
+    <!-- Tracking Layout -->
+    <dimen name="map_car_height">250dp</dimen>
+    <dimen name="butt_track_height">40dp</dimen>
+    
+    <!-- Parking Layout -->
+    <dimen name="picture_park_height">100dp</dimen>
+    <dimen name="text_mergin">10dp</dimen>
+</resources>

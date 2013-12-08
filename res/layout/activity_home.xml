@@ -1,0 +1,117 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/padding_size"
+    android:paddingRight="@dimen/padding_size"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".HomeActivity" 
+    android:background="@drawable/shoping1" 
+    >
+    
+    <RelativeLayout
+        android:id="@+id/about_detail"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/about_detail_height"
+        android:layout_centerInParent="true"
+        android:background="@drawable/button_bg"
+        android:visibility="gone"
+         >
+        
+        
+    </RelativeLayout>
+
+    <RelativeLayout 
+    android:id="@+id/butt_setting"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/custom_button_height"
+    android:background="@drawable/button_bg"
+    android:layout_alignParentBottom="true"
+    android:layout_marginBottom="@dimen/padding_bottom_parent"
+    >    
+    <TextView 
+        android:id="@+id/butt_content"
+        android:layout_height="match_parent"
+        android:layout_width="@dimen/custom_button_width"
+        android:gravity="center"
+        android:text="@string/setting_button"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/large_textsize1"
+        />
+    <TextView 
+        android:id="@+id/custom_butt_text1"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@id/butt_content"
+        android:layout_alignParentRight="true"
+        android:gravity="center_vertical"
+        android:text="@string/setting_button_detail"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/small_textsize3"
+        />
+</RelativeLayout>
+
+    <RelativeLayout 
+    android:id="@+id/butt_member"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/custom_button_height"
+    android:background="@drawable/button_bg"
+    android:layout_above="@id/butt_setting"
+    android:layout_marginBottom="@dimen/padding_bottom_to_bottom"
+    >    
+    <TextView 
+        android:id="@+id/butt_content2"
+        android:layout_height="match_parent"
+        android:layout_width="@dimen/custom_button_width"
+        android:gravity="center"
+        android:text="@string/member_button"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/large_textsize1"
+        />
+    <TextView 
+        android:id="@+id/custom_butt_text2"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@id/butt_content2"
+        android:layout_alignParentRight="true"
+        android:gravity="center_vertical"
+        android:text="@string/member_button_detail"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/small_textsize3"
+        />
+</RelativeLayout>
+
+<RelativeLayout 
+    android:id="@+id/butt_about"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/custom_button_height"
+    android:background="@drawable/button_bg"
+    android:layout_above="@id/butt_member"
+    android:layout_marginBottom="@dimen/padding_bottom_to_bottom"
+    >    
+    <TextView 
+        android:id="@+id/butt_content3"
+        android:layout_height="match_parent"
+        android:layout_width="@dimen/custom_button_width"
+        android:gravity="center"
+        android:text="@string/about_button"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/large_textsize1"
+        />
+    <TextView 
+        android:id="@+id/custom_butt_text3"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@id/butt_content3"
+        android:layout_alignParentRight="true"
+        android:gravity="center_vertical"
+        android:text="@string/about_button_detail"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/small_textsize3"
+        />
+</RelativeLayout>
+
+</RelativeLayout>
