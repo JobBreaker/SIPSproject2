@@ -1,5 +1,9 @@
 package com.example.sipsproject2;
  
+import static com.example.sipstool.Constants.IMAGES;
+import com.example.sipstool.Constants.Extra;
+import com.nostra13.universalimageloader.core.ImageLoader;
+
 import android.app.TabActivity;
 import android.content.Intent;
 import android.content.res.Resources;
@@ -11,7 +15,7 @@ import android.widget.TabHost;
 import android.widget.TabHost.TabSpec;
  
 public class MainActivity extends TabActivity {
- 
+	protected ImageLoader imageLoader = ImageLoader.getInstance();
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
@@ -39,6 +43,7 @@ public class MainActivity extends TabActivity {
 				.setContent(privillegeIntent);
 		
 		Intent promotionIntent = new Intent().setClass(this, PromotionActivity.class);
+		promotionIntent.putExtra(Extra.IMAGES, IMAGES);
 		TabSpec tabSpecPromotion = tabHost.newTabSpec("PromotionActivity").setIndicator("",ressources.getDrawable(R.drawable.promotion))
 				.setContent(promotionIntent);
 		
@@ -59,6 +64,10 @@ public class MainActivity extends TabActivity {
 		//set Windows tab as default (zero based)
 		tabHost.setCurrentTab(2);
 		
+	}
+	public void onBackPressed() {
+		imageLoader.stop();
+		super.onBackPressed();
 	}
  
 }

@@ -58,25 +58,29 @@ public final class R {
         public static final int text_mergin=0x7f040018;
     }
     public static final class drawable {
-        public static final int bg_privillege=0x7f020000;
-        public static final int bg_tracking1=0x7f020001;
-        public static final int bg_tracking2=0x7f020002;
-        public static final int blue_repeater=0x7f020003;
-        public static final int butt_parking=0x7f020004;
-        public static final int button_bg=0x7f020005;
-        public static final int central=0x7f020006;
-        public static final int home=0x7f020007;
-        public static final int ic_launcher=0x7f020008;
-        public static final int map=0x7f020009;
-        public static final int privillege=0x7f02000a;
-        public static final int promotion=0x7f02000b;
-        public static final int shoping1=0x7f02000c;
-        public static final int sisp1=0x7f02000d;
-        public static final int tracking=0x7f02000e;
+        public static final int abc=0x7f020000;
+        public static final int bg_privillege=0x7f020001;
+        public static final int bg_tracking1=0x7f020002;
+        public static final int bg_tracking2=0x7f020003;
+        public static final int blue_repeater=0x7f020004;
+        public static final int butt_parking=0x7f020005;
+        public static final int button_bg=0x7f020006;
+        public static final int central=0x7f020007;
+        public static final int home=0x7f020008;
+        public static final int ic_empty=0x7f020009;
+        public static final int ic_error=0x7f02000a;
+        public static final int ic_launcher=0x7f02000b;
+        public static final int ic_stub=0x7f02000c;
+        public static final int map=0x7f02000d;
+        public static final int privillege=0x7f02000e;
+        public static final int promotion=0x7f02000f;
+        public static final int shoping1=0x7f020010;
+        public static final int sisp1=0x7f020011;
+        public static final int tracking=0x7f020012;
     }
     public static final class id {
         public static final int about_detail=0x7f080002;
-        public static final int action_settings=0x7f080041;
+        public static final int action_settings=0x7f080044;
         public static final int add=0x7f080001;
         public static final int butt_about=0x7f080009;
         public static final int butt_content=0x7f080004;
@@ -84,7 +88,7 @@ public final class R {
         public static final int butt_content3=0x7f08000a;
         public static final int butt_content_valet=0x7f080023;
         public static final int butt_content_valet2=0x7f080024;
-        public static final int butt_content_your_car=0x7f08002d;
+        public static final int butt_content_your_car=0x7f08002e;
         public static final int butt_custom_content=0x7f080029;
         public static final int butt_custom_detail=0x7f08002a;
         public static final int butt_customer=0x7f080028;
@@ -98,41 +102,48 @@ public final class R {
         public static final int butt_reserve2=0x7f080026;
         public static final int butt_reserve3=0x7f080027;
         public static final int butt_setting=0x7f080003;
-        public static final int butt_track_scan=0x7f080037;
-        public static final int butt_track_search=0x7f080036;
-        public static final int butt_track_show_history=0x7f080038;
-        public static final int butt_tracking=0x7f08002f;
-        public static final int butt_tracking_group=0x7f080035;
-        public static final int butt_traking_content=0x7f080030;
-        public static final int butt_traking_detail=0x7f080031;
-        public static final int butt_your_car=0x7f08002c;
+        public static final int butt_track_scan=0x7f080038;
+        public static final int butt_track_search=0x7f080037;
+        public static final int butt_track_show_history=0x7f080039;
+        public static final int butt_tracking=0x7f080030;
+        public static final int butt_tracking_group=0x7f080036;
+        public static final int butt_traking_content=0x7f080031;
+        public static final int butt_traking_detail=0x7f080032;
+        public static final int butt_your_car=0x7f08002d;
         public static final int button_group_privillege=0x7f080021;
-        public static final int button_group_tracking=0x7f08002b;
-        public static final int car_detail=0x7f08003a;
-        public static final int car_detail_layout=0x7f080032;
-        public static final int car_pos=0x7f080033;
+        public static final int button_group_tracking=0x7f08002c;
+        public static final int car_detail=0x7f08003d;
+        public static final int car_detail_layout=0x7f080033;
+        public static final int car_pos=0x7f080034;
         public static final int custom_butt_text1=0x7f080005;
         public static final int custom_butt_text2=0x7f080008;
         public static final int custom_butt_text3=0x7f08000b;
-        public static final int custom_content_your_car2=0x7f08002e;
+        public static final int custom_content_your_car2=0x7f08002f;
         public static final int group=0x7f080000;
-        public static final int image_building=0x7f080039;
+        public static final int image=0x7f08003a;
+        public static final int image_building=0x7f08003c;
         public static final int imv_parking_detail_logo=0x7f080014;
         public static final int imv_parking_detail_map=0x7f08001d;
+        public static final int item_clear_disc_cache=0x7f080046;
+        public static final int item_clear_memory_cache=0x7f080045;
+        public static final int item_pause_on_fling=0x7f080048;
+        public static final int item_pause_on_scroll=0x7f080047;
         public static final int ll_parking_detail_main_content=0x7f080015;
+        public static final int loading=0x7f08003b;
         public static final int main_layout=0x7f08000c;
-        public static final int map_your_car=0x7f080034;
+        public static final int map_your_car=0x7f080035;
         public static final int member_id_box=0x7f08000f;
         public static final int member_label=0x7f08000e;
         public static final int member_login_box=0x7f08000d;
         public static final int member_pass_box=0x7f080010;
-        public static final int parking_attaction=0x7f08003c;
+        public static final int pager=0x7f08002b;
+        public static final int parking_attaction=0x7f08003f;
         public static final int parking_detail_layout=0x7f080013;
-        public static final int parking_name=0x7f08003b;
-        public static final int parking_parking_capacity=0x7f080040;
-        public static final int parking_parking_distance=0x7f08003f;
-        public static final int parking_privillege=0x7f08003d;
-        public static final int parking_see_detail=0x7f08003e;
+        public static final int parking_name=0x7f08003e;
+        public static final int parking_parking_capacity=0x7f080043;
+        public static final int parking_parking_distance=0x7f080042;
+        public static final int parking_privillege=0x7f080040;
+        public static final int parking_see_detail=0x7f080041;
         public static final int rl_parking_button_group=0x7f08001e;
         public static final int tv_parking_detail_full_address=0x7f080019;
         public static final int tv_parking_detail_full_attarction=0x7f080017;
@@ -153,7 +164,8 @@ public final class R {
         public static final int activity_privillege=0x7f030007;
         public static final int activity_promotion=0x7f030008;
         public static final int activity_tracking=0x7f030009;
-        public static final int parking_detail=0x7f03000a;
+        public static final int item_pager_image=0x7f03000a;
+        public static final int parking_detail=0x7f03000b;
     }
     public static final class menu {
         public static final int activity_group=0x7f070000;
@@ -203,6 +215,12 @@ public final class R {
         public static final int member_button=0x7f050010;
         public static final int member_button_detail=0x7f050011;
         public static final int member_label=0x7f050016;
+        public static final int menu_item_clear_disc_cache=0x7f05002e;
+        /**  Menu 
+         */
+        public static final int menu_item_clear_memory_cache=0x7f05002d;
+        public static final int menu_item_pause_on_fling=0x7f050030;
+        public static final int menu_item_pause_on_scroll=0x7f05002f;
         /**  Parking 
          */
         public static final int more_detail=0x7f050029;

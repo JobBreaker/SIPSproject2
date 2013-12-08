@@ -56,5 +56,11 @@
     <string name="title_activity_parking_detail">ParkingDetailActivity</string>
     <string name="butt_see_park">See Parking</string>
     <string name="butt_reservation">Reservation</string>
+    
+    <!-- Menu -->
+       <string name="menu_item_clear_memory_cache">Clear memory cache</string>
+    <string name="menu_item_clear_disc_cache">Clear disc cache</string>
+    <string name="menu_item_pause_on_scroll">Pause on scroll</string>
+    <string name="menu_item_pause_on_fling">Pause on fling</string>
 
 </resources>
