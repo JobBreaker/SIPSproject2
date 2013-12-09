@@ -26,12 +26,11 @@ public final class Constants {
 	public static final String[] IMAGES = new String[] {
 			// Heavy images
 		    "drawable://" + R.drawable.abc,
-			"http://yogaaum.com/wp-content/uploads/2013/02/poster-promotion-R1.jpg",
-			"http://www.promotiontoyou.com/wp-content/uploads/2013/08/Promotion-Rainy-Day-Deal-Dinner-Buffet-Save-50-@-Artium-Landmark-Hotel-full.jpg",
-			"http://www.promotiontoyou.com/wp-content/uploads/2013/01/promotion-adidas-sale-up-to-30-off-central-rama-9-jan-2013-full.jpg",
-			"http://www.compomax.co.th/compomax/wp-content/uploads/promotion-02.jpg",
-			"http://www.sfcinemacity.com/site_images/image/OMGPromotion.jpg",
-			"http://a.hiphotos.baidu.com/album/w%3D2048/sign=004abf07503d26972ed30f5d61c3b0fb/023b5bb5c9ea15ce967562c4b7003af33b87b260.jpg"
+		    "drawable://" + R.drawable.pro2,
+		    "drawable://" + R.drawable.pro3,
+		    "drawable://" + R.drawable.pro4,
+		    "drawable://" + R.drawable.pro5,
+		    "drawable://" + R.drawable.pro1,
 	};
 
 	private Constants() {

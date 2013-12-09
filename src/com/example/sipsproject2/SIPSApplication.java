@@ -60,8 +60,8 @@ public class SIPSApplication extends Application {
 		// method.
 		File cacheDir = StorageUtils.getCacheDirectory(context);
 		ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(context)
-		   .memoryCacheExtraOptions(480, 800) // default = device screen dimensions
-		   .discCacheExtraOptions(480, 800, Bitmap.CompressFormat.JPEG, 75, null)
+		  // .memoryCacheExtraOptions(480, 800) // default = device screen dimensions
+		  // .discCacheExtraOptions(480, 800, Bitmap.CompressFormat.PNG, 75, null)
 		   .discCacheFileNameGenerator(new HashCodeFileNameGenerator())
 				.threadPriority(Thread.NORM_PRIORITY - 2)
 				.denyCacheImageMultipleSizesInMemory()
