@@ -103,5 +103,6 @@ public class ParkingDetailObject {
 		}
 		return false;
 	}
-	
-}
+		
+		
+	}

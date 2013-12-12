@@ -1,5 +1,8 @@
 package com.example.sipstool;
 
+import org.json.JSONObject;
+
+import com.example.json.ReservationJSON;
 import com.example.sipsproject2.R;
 
 import android.app.Dialog;
@@ -48,8 +51,6 @@ public class ReservationDialog extends Dialog implements android.view.View.OnCli
 				
 					
 				}
-			
-			
 			});
 		// TODO Auto-generated constructor stub
 	}
@@ -57,6 +58,7 @@ public class ReservationDialog extends Dialog implements android.view.View.OnCli
 	public void onClick(View v) {
 		switch(v.getId()){
 		case R.id.btn_confirm:
+			
 			dismiss();
 			break;
 		case R.id.btn_cancel:
@@ -66,6 +68,11 @@ public class ReservationDialog extends Dialog implements android.view.View.OnCli
 			break;
 		}
 		
+	}
+	public ReservationJSON setJSON(){
+		ReservationJSON json = new ReservationJSON(customId.getText().toString(), privillegeId.getText().toString()
+				, spin.getSelectedItemId()*1000, "18:12:14");
+		return json;
 	}
 
 }
