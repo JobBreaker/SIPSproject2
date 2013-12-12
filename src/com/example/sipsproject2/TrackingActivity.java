@@ -23,12 +23,14 @@ import android.widget.Toast;
 public class TrackingActivity extends Activity {
 	private static final int ZBAR_SCANNER_REQUEST = 0;
     private static final int ZBAR_QR_SCANNER_REQUEST = 1;
+    private static final int HISTORY_REQUEST = 100;
     private static final int SCAN_BUTTON = 1000;
     private static final int TRACKING_BUTTON = 2000;
     
     TextView tv1;
-    RelativeLayout layout;
-    boolean layout_visible = false;
+    RelativeLayout layout,route_layout;
+    boolean layout_yourcar_visible = false;
+    boolean layout_route_visible =false;
     private LogDatasource datasource;
 
 	@Override
@@ -37,6 +39,7 @@ public class TrackingActivity extends Activity {
 		setContentView(R.layout.activity_tracking);
 		Button qrButton = (Button)findViewById(R.id.butt_track_scan);
 		Button historyButton = (Button)findViewById(R.id.butt_track_show_history);
+		route_layout = (RelativeLayout)findViewById(R.id.car_route_layout);
 		RelativeLayout carButton = (RelativeLayout)findViewById(R.id.butt_your_car);
 		RelativeLayout trackingButton = (RelativeLayout)findViewById(R.id.butt_tracking);
 		layout = (RelativeLayout)findViewById(R.id.car_detail_layout);
@@ -52,22 +55,34 @@ public class TrackingActivity extends Activity {
 				switch (v.getId()){
 				case R.id.butt_track_show_history:
 					Intent historyIntent =  new Intent(v.getContext(),HistoryActivity.class);
-					startActivityForResult(historyIntent,100);
+					startActivityForResult(historyIntent,HISTORY_REQUEST);
 					break;
 				case R.id.butt_track_scan:
 					startActivityQR(SCAN_BUTTON);
 					//startActivityForResult(qrActivity,ZBAR_SCANNER_REQUEST);
 					break;
 				case R.id.butt_your_car:
-					if (layout_visible == false){
+					if (layout_yourcar_visible == false){
 						layout.setVisibility(View.VISIBLE);
-						layout_visible = true;
+						route_layout.setVisibility(View.INVISIBLE);
+						layout_yourcar_visible = true;
+						layout_route_visible = false;
+					}
+					else{
+						layout.setVisibility(View.INVISIBLE);
+						layout_yourcar_visible = false;
 					}
 					break;
 				case R.id.butt_tracking:
-					if (layout_visible == true){
+					if (layout_route_visible == false){
 						layout.setVisibility(View.INVISIBLE);
-						layout_visible = false;
+						route_layout.setVisibility(View.VISIBLE);
+						layout_yourcar_visible = false;
+						layout_route_visible = true;
+					}
+					else{
+						route_layout.setVisibility(View.INVISIBLE);
+						layout_route_visible = false;
 					}
 					startActivityQR(TRACKING_BUTTON);
 					//startActivityForResult(qrActivity,ZBAR_SCANNER_REQUEST);
@@ -116,6 +131,8 @@ public class TrackingActivity extends Activity {
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
 				// TODO Auto-generated method stub
+				route_layout.setVisibility(View.INVISIBLE);
+				layout_route_visible = false;
 				dialog.cancel();
 			}
 		});
@@ -142,6 +159,14 @@ public class TrackingActivity extends Activity {
                     }
                 }
                 break;
+            case HISTORY_REQUEST:
+            	if (resultCode== RESULT_OK){
+            		datasource = new LogDatasource(this);
+                    tv1.setText("Your car is " + data.getStringExtra("position"));
+                    datasource.close();
+            	}
+            default:
+            	break;
         }
     }
 	

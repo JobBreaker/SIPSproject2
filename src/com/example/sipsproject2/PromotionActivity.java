@@ -9,6 +9,7 @@ import com.nostra13.universalimageloader.core.assist.ImageScaleType;
 import com.nostra13.universalimageloader.core.assist.SimpleImageLoadingListener;
 import com.nostra13.universalimageloader.core.display.FadeInBitmapDisplayer;
 
+
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.app.Activity;
@@ -52,8 +53,9 @@ public class PromotionActivity extends BaseActivity {
 			.resetViewBeforeLoading(true)
 			.cacheInMemory()
 			.cacheOnDisc(true)
-			.imageScaleType(ImageScaleType.EXACTLY)
+			.imageScaleType(ImageScaleType.EXACTLY_STRETCHED)
 			.bitmapConfig(Bitmap.Config.RGB_565)
+			
 			.considerExifParams(true)
 			
 			.displayer(new FadeInBitmapDisplayer(300))
@@ -98,6 +100,7 @@ public class PromotionActivity extends BaseActivity {
 			imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
 			final ProgressBar spinner = (ProgressBar) imageLayout.findViewById(R.id.loading);
 
+			
 			imageLoader.displayImage(images[position], imageView, options, new SimpleImageLoadingListener() {
 				@Override
 				public void onLoadingStarted(String imageUri, View view) {

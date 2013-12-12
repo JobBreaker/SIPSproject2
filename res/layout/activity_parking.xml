@@ -6,11 +6,20 @@
     android:paddingRight="@dimen/padding_size"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".ParkingActivity" >
-
+	
+    <EditText 
+        android:id="@+id/parking_edittext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/search"
+        
+        />
     <ListView
         android:id="@android:id/list"
+        android:layout_margin="2dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" 
+        android:layout_height="fill_parent"
+        android:layout_below="@id/parking_edittext" 
         >
     </ListView>
     

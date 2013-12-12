@@ -34,7 +34,7 @@
         android:layout_marginLeft="@dimen/activity_vertical_margin"
         android:layout_below="@id/member_label"
         android:hint="@string/memberId"
-        android:textColor="@android:color/white"
+        android:textColor="@android:color/black"
         android:ems="10" 
         >
         <requestFocus />
@@ -50,7 +50,7 @@
         android:inputType="textPassword" 
         android:layout_below="@id/member_id_box"
         android:hint="@string/password"
-        android:textColor="@android:color/white"
+        android:textColor="@android:color/black"
         />
     
     <LinearLayout 

@@ -1,0 +1,81 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".ParkingMapFloorActivity" >
+
+
+    <Button
+        android:id="@+id/button_parking_refresh"
+        android:layout_width="@dimen/refresh_width"
+        android:layout_height="@dimen/refresh_height"
+        android:background="#FFFFFF"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:text="@string/refresh"
+        android:layout_marginBottom="10dp"
+         />
+
+    <Spinner
+        android:id="@+id/spinner_car_map"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/spinner_height"
+        android:layout_above="@id/button_parking_refresh"
+        android:layout_margin="5dp"
+        android:background="#FFFFFF"
+         />
+    
+    <LinearLayout 
+        android:id="@+id/layout_header_parking"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_alignParentTop="true"
+        android:orientation="horizontal"
+        >
+        <ImageView 
+            android:layout_height="match_parent"
+            android:id="@+id/header_parking_image"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:contentDescription="@string/desc"
+            android:layout_gravity="center"
+            />
+        <LinearLayout 
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+            <TextView 
+                android:id="@+id/tv_header_parking_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/normal_textsize2"
+                />
+             <TextView 
+                android:id="@+id/tv_header_parking_detail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/small_textsize2"
+                />
+            
+        </LinearLayout>
+        
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@id/spinner_car_map"
+        android:contentDescription="@string/desc"
+        android:layout_below="@id/layout_header_parking"
+        android:src="@drawable/ic_empty" />
+
+</RelativeLayout>

@@ -43,6 +43,7 @@
     <string name="car_pos_is">Your car position is 3A11</string>
 
     <!-- Privillege -->
+
     <string name="butt_pri_valet">Valet\nParking</string>
     <string name="butt_pri_reserve">Reservation</string>
     <string name="butt_pri_custom">Customer\nService</string>
@@ -56,11 +57,34 @@
     <string name="title_activity_parking_detail">ParkingDetailActivity</string>
     <string name="butt_see_park">See Parking</string>
     <string name="butt_reservation">Reservation</string>
+    <string name="search">Search your parking</string>
+    <string name="refresh">Refresh</string>
+	
+    <string-array name = "parking_floor">
+        <item>FloorG</item>
+        <item>Floor1A</item>
+        <item>Floor1B</item>
+        <item>Floor2A</item>
+        <item>Floor2B</item>
+    </string-array>
+    
+    
+    
     
     <!-- Menu -->
-       <string name="menu_item_clear_memory_cache">Clear memory cache</string>
+    <string name="menu_item_clear_memory_cache">Clear memory cache</string>
     <string name="menu_item_clear_disc_cache">Clear disc cache</string>
     <string name="menu_item_pause_on_scroll">Pause on scroll</string>
     <string name="menu_item_pause_on_fling">Pause on fling</string>
 
+    <!-- Custom Dialog -->
+    <string name="custom_dialog_hint">Please Input Your ValetParkingID</string>
+    <string name="valet_id">valetID</string>
+    <string name="title_activity_parking_map_floor">ParkingMapFloorActivity</string>
+    
+    <string name="custumer_id">CustumerId</string>
+    <string name="pri_id">PrivillegeId</string>
+	<string name="input_custumer_id">Input your custumerId</string>
+    <string name="input_pri_id">or input your PrivillegeId</string>
+    
 </resources>

@@ -41,4 +41,10 @@
     <!-- Parking Layout -->
     <dimen name="picture_park_height">100dp</dimen>
     <dimen name="text_mergin">10dp</dimen>
+    <dimen name="refresh_height">40dp</dimen>
+	<dimen name="refresh_width">100dp</dimen>    
+    <dimen name="spinner_height">50dp</dimen>
+    <!-- Custom Tools -->
+    <dimen name="dialog_height">130dp</dimen>
+    <dimen name="dialog_reservation_text_width">100dp</dimen>
 </resources>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="320dp"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:orientation="vertical" 
+    
+    >
+    
+	<LinearLayout 
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="horizontal"
+	    >
+
+	 <TextView
+	     android:layout_width="@dimen/dialog_reservation_text_width"
+	     android:layout_height="wrap_content" 
+	     android:textColor="#FFFFFF"
+	     android:textSize="@dimen/normal_textsize1"
+	     android:text = "@string/custumer_id"
+	     />
+
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:ems="10" 
+        android:hint="@string/input_custumer_id"
+        >        
+    </EditText>
+	</LinearLayout>
+		<LinearLayout 
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="horizontal"
+	    >
+
+	 <TextView
+	     android:layout_width="@dimen/dialog_reservation_text_width"
+	     android:layout_height="wrap_content" 
+	     android:textColor="#FFFFFF"
+	     android:textSize="@dimen/normal_textsize1"
+	     android:text = "@string/pri_id"
+	     />
+	
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/input_pri_id"
+         />
+	</LinearLayout>
+    <Spinner
+        android:id="@+id/spinner1"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="3dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+    <TimePicker
+        android:id="@+id/timePicker1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    
+<LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="#606060"
+        android:orientation="horizontal" 
+        android:layout_margin="10dp"
+        >
+
+        <Button
+            android:id="@+id/btn_confirm"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:background="@android:color/white"
+            android:clickable="true"
+            android:text="Reservation"
+            android:textColor="#404040"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btn_cancel"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="5dp"
+            android:background="@android:color/white"
+            android:clickable="true"
+            android:text="Cancel"
+            android:textColor="#404040"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</LinearLayout>
