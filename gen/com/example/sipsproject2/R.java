@@ -76,29 +76,31 @@ public final class R {
         public static final int butt_parking=0x7f020005;
         public static final int button_bg=0x7f020006;
         public static final int central=0x7f020007;
-        public static final int home=0x7f020008;
-        public static final int ic_empty=0x7f020009;
-        public static final int ic_error=0x7f02000a;
-        public static final int ic_launcher=0x7f02000b;
-        public static final int ic_stub=0x7f02000c;
-        public static final int map=0x7f02000d;
-        public static final int privillege=0x7f02000e;
-        public static final int pro1=0x7f02000f;
-        public static final int pro2=0x7f020010;
-        public static final int pro3=0x7f020011;
-        public static final int pro4=0x7f020012;
-        public static final int pro5=0x7f020013;
-        public static final int promotion=0x7f020014;
-        public static final int shoping1=0x7f020015;
-        public static final int sisp1=0x7f020016;
-        public static final int tracking=0x7f020017;
+        public static final int floor1=0x7f020008;
+        public static final int home=0x7f020009;
+        public static final int ic_empty=0x7f02000a;
+        public static final int ic_error=0x7f02000b;
+        public static final int ic_launcher=0x7f02000c;
+        public static final int ic_stub=0x7f02000d;
+        public static final int map=0x7f02000e;
+        public static final int privillege=0x7f02000f;
+        public static final int pro1=0x7f020010;
+        public static final int pro2=0x7f020011;
+        public static final int pro3=0x7f020012;
+        public static final int pro4=0x7f020013;
+        public static final int pro5=0x7f020014;
+        public static final int promotion=0x7f020015;
+        public static final int shoping1=0x7f020016;
+        public static final int sisp1=0x7f020017;
+        public static final int track=0x7f020018;
+        public static final int tracking=0x7f020019;
     }
     public static final class id {
         public static final int about_detail=0x7f090002;
         public static final int action_settings=0x7f090059;
         public static final int add=0x7f090001;
-        public static final int btn_cancel=0x7f090054;
-        public static final int btn_confirm=0x7f090053;
+        public static final int btn_cancel=0x7f090053;
+        public static final int btn_confirm=0x7f090052;
         public static final int btn_no=0x7f090058;
         public static final int btn_yes=0x7f090057;
         public static final int butt_about=0x7f090009;
@@ -175,7 +177,7 @@ public final class R {
         public static final int rl_parking_button_group=0x7f09001f;
         public static final int spinner1=0x7f090051;
         public static final int spinner_car_map=0x7f090023;
-        public static final int timePicker1=0x7f090052;
+        public static final int tel_input=0x7f090056;
         public static final int tv_car_route=0x7f09003d;
         public static final int tv_header_parking_detail=0x7f090027;
         public static final int tv_header_parking_name=0x7f090026;
@@ -186,8 +188,8 @@ public final class R {
         public static final int tv_parking_detail_full_name=0x7f090017;
         public static final int tv_parking_detail_full_privillege=0x7f090019;
         public static final int tv_parking_detail_full_shopping=0x7f09001c;
-        public static final int txt_dia=0x7f090055;
-        public static final int valet_id_input=0x7f090056;
+        public static final int txt_dia=0x7f090054;
+        public static final int valet_id_input=0x7f090055;
     }
     public static final class layout {
         public static final int activity_activity_group=0x7f030000;
@@ -249,11 +251,11 @@ public final class R {
         /**  Custom Dialog 
          */
         public static final int custom_dialog_hint=0x7f050033;
-        public static final int custumer_id=0x7f050036;
+        public static final int custumer_id=0x7f050037;
         public static final int desc=0x7f050002;
         public static final int hello_world=0x7f050003;
-        public static final int input_custumer_id=0x7f050038;
-        public static final int input_pri_id=0x7f050039;
+        public static final int input_custumer_id=0x7f050039;
+        public static final int input_pri_id=0x7f05003a;
         public static final int member=0x7f050006;
         /**  MemberBox 
          */
@@ -271,7 +273,7 @@ public final class R {
          */
         public static final int more_detail=0x7f050029;
         public static final int password=0x7f050015;
-        public static final int pri_id=0x7f050037;
+        public static final int pri_id=0x7f050038;
         public static final int privillege=0x7f050007;
         public static final int promotion=0x7f050008;
         public static final int refresh=0x7f05002e;
@@ -286,12 +288,13 @@ public final class R {
         public static final int title_activity_member=0x7f050005;
         public static final int title_activity_parking=0x7f050004;
         public static final int title_activity_parking_detail=0x7f05002a;
-        public static final int title_activity_parking_map_floor=0x7f050035;
+        public static final int title_activity_parking_map_floor=0x7f050036;
         public static final int title_activity_privillege=0x7f05000a;
         public static final int title_activity_promotion=0x7f05000b;
         public static final int title_activity_tracking=0x7f05000c;
         public static final int tracking=0x7f050009;
         public static final int valet_id=0x7f050034;
+        public static final int valet_tel=0x7f050035;
     }
     public static final class style {
         /** 

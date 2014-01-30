@@ -1,25 +1,32 @@
 package com.example.sipsproject2;
 
+
+import org.apache.http.message.BasicNameValuePair;
+
+import com.example.httpconnect.ConnectServer;
 import com.example.sipstool.ReservationDialog;
 import com.example.sipstool.ValetDialogBox;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Context;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 public class PrivillegeActivity extends Activity {
 	RelativeLayout valetButton,reservationButton;
 	OnClickListener onclick1;
+	private static ConnectServer connectServer;
+	private static String url_name = "http://158.108.34.17/mobile/valet/";
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_privillege);
 		valetButton = (RelativeLayout)findViewById(R.id.butt_pri_valet);
 		reservationButton = (RelativeLayout)findViewById(R.id.butt_reserve);
-		
 		onclick1 = new OnClickListener(){
 
 			@Override
@@ -33,8 +40,7 @@ public class PrivillegeActivity extends Activity {
 					break;
 				default:
 					break;			
-				}
-				
+				}	
 			}
 		};
 		valetButton.setOnClickListener(onclick1);
@@ -47,16 +53,30 @@ public class PrivillegeActivity extends Activity {
 		getMenuInflater().inflate(R.menu.privillege, menu);
 		return true;
 	}
+	
 	private void showReservationDialog(){
 		ReservationDialog reservation = new ReservationDialog(PrivillegeActivity.this);
 		reservation.setTitle("Reservation");
-		reservation.show();
-		
+		reservation.show();	
 	}
+	
 	private void showValetDialog() {
 		ValetDialogBox valet = new ValetDialogBox(PrivillegeActivity.this);
 		valet.show();
 	}
 	
+	public static void executeServer(Context context){
+		connectServer = new ConnectServer(context, url_name);
+		connectServer.addValue("request","1000");
+		connectServer.addValue("valet_id","898993");
+    	connectServer.addValue("tel","0876340340");
+		connectServer.execute();
+	}
+	public void cannotConnectToServer() {
+		Toast.makeText(this, "Cannot Connect To Server", Toast.LENGTH_LONG).show();
+	}
+	public void errorConnectToServer() {
+		Toast.makeText(this, "Error Connectation Failed", Toast.LENGTH_LONG).show();
+	}
 
 }

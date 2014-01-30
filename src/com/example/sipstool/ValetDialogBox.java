@@ -1,5 +1,6 @@
 package com.example.sipstool;
 
+import com.example.sipsproject2.PrivillegeActivity;
 import com.example.sipsproject2.R;
 
 import android.app.Activity;
@@ -9,12 +10,15 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 
 public class ValetDialogBox extends Dialog implements android.view.View.OnClickListener{
 	public Activity context;
 	public Dialog dialog;
 	public Button yesButton,noButton;
+	public EditText valetEditText;
 	public ValetDialogBox(Activity a) {
 		super(a);
 		this.context = a;
@@ -27,6 +31,7 @@ public class ValetDialogBox extends Dialog implements android.view.View.OnClickL
 	    setContentView(R.layout.valet_dialog_box);
 	    yesButton = (Button) findViewById(R.id.btn_yes);
 	    noButton = (Button) findViewById(R.id.btn_no);
+	    valetEditText = (EditText) findViewById(R.id.valet_id_input);
 	    yesButton.setOnClickListener(this);
 	    noButton.setOnClickListener(this);
 	    
@@ -38,7 +43,13 @@ public class ValetDialogBox extends Dialog implements android.view.View.OnClickL
 		// TODO Auto-generated method stub
 		 switch (v.getId()) {
 		    case R.id.btn_yes:
-		      dismiss();
+		      String valetId = valetEditText.getText().toString();
+		      if (valetId.isEmpty()){
+		    	  Toast.makeText(context, "Please input valetId", Toast.LENGTH_SHORT).show();
+		      }
+		      else{
+		    	  PrivillegeActivity.executeServer(context);
+		    	  dismiss();}
 		      break;
 		    case R.id.btn_no:
 		      dismiss();

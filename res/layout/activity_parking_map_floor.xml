@@ -12,7 +12,7 @@
         android:id="@+id/button_parking_refresh"
         android:layout_width="@dimen/refresh_width"
         android:layout_height="@dimen/refresh_height"
-        android:background="#FFFFFF"
+        android:background="#C0C0C0"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:gravity="center"
@@ -26,7 +26,7 @@
         android:layout_height="@dimen/spinner_height"
         android:layout_above="@id/button_parking_refresh"
         android:layout_margin="5dp"
-        android:background="#FFFFFF"
+        android:background="#C0C0C0"
          />
     
     <LinearLayout 
@@ -76,6 +76,6 @@
         android:layout_above="@id/spinner_car_map"
         android:contentDescription="@string/desc"
         android:layout_below="@id/layout_header_parking"
-        android:src="@drawable/ic_empty" />
+        android:src="@drawable/floor1" />
 
 </RelativeLayout>

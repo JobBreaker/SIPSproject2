@@ -42,8 +42,8 @@ public class ParkingMapFloorActivity extends Activity {
 
 	private void setHeader(ParkingDetailObject parking2) {
 		nameTextView.setText(parking2.getName());
-		String detail = "Address : " +parking2.getAddress() +"/n"
-				+ "Contact : " + parking2.getContact() + "/n"
+		String detail = "Address : " +parking2.getAddress() +"\n"
+				+ "Contact : " + parking2.getContact() + "\n"
 				+ "Attraction : "+parking2.getAttractions();
 	   detailTextView.setText(detail);
 	}

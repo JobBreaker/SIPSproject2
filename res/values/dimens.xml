@@ -45,6 +45,6 @@
 	<dimen name="refresh_width">100dp</dimen>    
     <dimen name="spinner_height">50dp</dimen>
     <!-- Custom Tools -->
-    <dimen name="dialog_height">130dp</dimen>
+    <dimen name="dialog_height">180dp</dimen>
     <dimen name="dialog_reservation_text_width">100dp</dimen>
 </resources>

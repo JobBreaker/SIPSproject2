@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">SIPSproject2</string>
+    <string name="app_name">Privillege Parking</string>
     <string name="action_settings">Settings</string>
     <string name="desc">normol</string>
     <string name="hello_world">Hello world!</string>
@@ -80,6 +80,7 @@
     <!-- Custom Dialog -->
     <string name="custom_dialog_hint">Please Input Your ValetParkingID</string>
     <string name="valet_id">valetID</string>
+    <string name="valet_tel">telephon number</string>
     <string name="title_activity_parking_map_floor">ParkingMapFloorActivity</string>
     
     <string name="custumer_id">CustumerId</string>
