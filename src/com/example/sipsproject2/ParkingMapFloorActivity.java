@@ -9,6 +9,8 @@ import android.app.Activity;
 import android.content.Intent;
 import android.view.Menu;
 import android.view.View;
+import android.webkit.WebSettings.LayoutAlgorithm;
+import android.webkit.WebView;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
@@ -22,6 +24,7 @@ public class ParkingMapFloorActivity extends Activity {
 	ImageView logo;
 	Button refreshButton;
 	Spinner spinner;
+	WebView web;
 	ParkingDetailObject parking;
 	long id;
 	@Override
@@ -34,6 +37,9 @@ public class ParkingMapFloorActivity extends Activity {
 		detailTextView = (TextView)findViewById(R.id.tv_header_parking_detail);
 		logo = (ImageView)findViewById(R.id.header_parking_image);
 		spinner = (Spinner)findViewById(R.id.spinner_car_map);
+		web = (WebView)findViewById(R.id.webView1);
+		web.getSettings().setJavaScriptEnabled(true);
+		web.loadUrl("http://158.108.34.17/myproject/index.php/map?mall=1&&floor=1");
 		parking = ParkingDetailActivity.receiveData(id);
 		setHeader(parking);
 		logo.setImageResource(R.drawable.central);

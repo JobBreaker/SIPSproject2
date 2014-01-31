@@ -147,7 +147,6 @@ public final class R {
         public static final int group=0x7f090000;
         public static final int header_parking_image=0x7f090025;
         public static final int image=0x7f090045;
-        public static final int imageView1=0x7f090028;
         public static final int image_building=0x7f090047;
         public static final int image_car_map_route=0x7f09003c;
         public static final int imv_parking_detail_logo=0x7f090015;
@@ -190,6 +189,7 @@ public final class R {
         public static final int tv_parking_detail_full_shopping=0x7f09001c;
         public static final int txt_dia=0x7f090054;
         public static final int valet_id_input=0x7f090055;
+        public static final int webView1=0x7f090028;
     }
     public static final class layout {
         public static final int activity_activity_group=0x7f030000;
