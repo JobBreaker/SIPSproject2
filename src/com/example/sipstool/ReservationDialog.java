@@ -11,6 +11,7 @@ import com.example.sipsproject2.R;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.view.View;
 
 import android.widget.AdapterView;
@@ -35,6 +36,10 @@ public class ReservationDialog extends Dialog implements android.view.View.OnCli
 		 setContentView(R.layout.reservation_dialog);
 		 customId = (EditText)findViewById(R.id.editText1);
 		 privillegeId = (EditText)findViewById(R.id.editText2);
+		 SharedPreferences share = context.getSharedPreferences(PreferencesName.PREFERENCES_NAME, Context.MODE_PRIVATE);
+		 if (share.getBoolean(PreferencesName.PREF_KEY_LOGIN_STATUS, false)){
+			 customId.setText(share.getString(PreferencesName.PREF_KEY_USER_ID, null));
+		 }
 		 spin = (Spinner)findViewById(R.id.spinner1);
 		 reservationButton = (Button)findViewById(R.id.btn_confirm);
 		 cancelButton = (Button)findViewById(R.id.btn_cancel);

@@ -4,6 +4,7 @@
     android:layout_height="match_parent"
     android:paddingLeft="@dimen/padding_size"
     android:paddingRight="@dimen/padding_size"
+  
     tools:context=".PrivillegeActivity"
 	android:background="@drawable/bg_privillege"
      >

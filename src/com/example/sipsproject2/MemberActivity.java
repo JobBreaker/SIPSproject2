@@ -58,6 +58,7 @@ public class MemberActivity extends Activity {
 		edit.putString(PreferencesName.PREF_KEY_USER_ID, user);
 		edit.putString(PreferencesName.PREF_KEY_PASSWORD, password);
 		edit.commit();
+		finish();
 		}
 		else{
 			Toast.makeText(this, "Login Failed Incorrect User Or Password", Toast.LENGTH_SHORT).show();
