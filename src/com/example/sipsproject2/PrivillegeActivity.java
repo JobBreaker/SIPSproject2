@@ -20,7 +20,7 @@ public class PrivillegeActivity extends Activity {
 	RelativeLayout valetButton,reservationButton;
 	OnClickListener onclick1;
 	private static ConnectServer connectServer;
-	private static String url_name = "http://158.108.34.17/mobile/valet/";
+	private static String url_name = "http://158.108.34.17/mobile/valet/insert_valet.php";
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -65,15 +65,8 @@ public class PrivillegeActivity extends Activity {
 		valet.show();
 	}
 	
-	public static void executeServer(Context context){
-		connectServer = new ConnectServer(context, url_name);
-		connectServer.addValue("request","1000");
-		connectServer.addValue("valet_id","898993");
-    	connectServer.addValue("tel","0876340340");
-		connectServer.execute();
-	}
-	public void cannotConnectToServer() {
-		Toast.makeText(this, "Cannot Connect To Server", Toast.LENGTH_LONG).show();
+	public void cannotConnectToServer(String data) {
+		Toast.makeText(this, data, Toast.LENGTH_LONG).show();
 	}
 	public void errorConnectToServer() {
 		Toast.makeText(this, "Error Connectation Failed", Toast.LENGTH_LONG).show();

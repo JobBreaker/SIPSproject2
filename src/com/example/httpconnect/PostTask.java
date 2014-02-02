@@ -4,63 +4,57 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URI;
-import java.net.URISyntaxException;
 import java.net.URL;
 import java.net.URLEncoder;
+import java.nio.charset.Charset;
 import java.util.ArrayList;
-import java.util.List;
 
-import org.apache.http.HttpEntity;
-import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
-import org.apache.http.client.ClientProtocolException;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.entity.UrlEncodedFormEntity;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
-import org.apache.http.protocol.HTTP;
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import com.example.sipsproject2.PrivillegeActivity;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
-import android.net.Uri;
 import android.os.AsyncTask;
-import android.util.Log;
+import android.widget.TextView;
 import android.widget.Toast;
 
-public class ConnectServer extends AsyncTask<String, Integer, String>{
-	public final int RESULT_OK =1;
-	public final int RESULT_FAILED=0;
+public class PostTask extends AsyncTask<String, Void, String>{
 	private Context mContext;
-	private ArrayList<BasicNameValuePair>mData;
-	private String mUrl;
-	public ConnectServer(Context context,ArrayList<BasicNameValuePair>data){
+	private ArrayList<BasicNameValuePair> mData;
+	public final String RESULT_OK="1";
+	public final String RESULT_FAILED ="0";
+	public PostTask(Context context,ArrayList<BasicNameValuePair>data){
 		mContext = context;
 		mData = data;
-
 	}
 	@Override
 	protected String doInBackground(String... params) {
-		// TODO Auto-generated method stub
-		return SendRequest(params[0]);
+		return PostData(params[0]);
 	}
-	protected void onPostExcute (String result) {
-		Toast.makeText(mContext, result, Toast.LENGTH_LONG).show();
+
+	@SuppressLint("ShowToast")
+	@Override
+	protected void onPostExecute(String result){
+		try {
+			JSONObject json = new JSONObject(result);
+	    	((PrivillegeActivity)mContext).cannotConnectToServer(result);
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
-	private String SendRequest(String url) {
+	private String PostData(String strUrl){
 		String strResult="";
 		try{
-		String dest = url+"?"+setRequestBody();
+		String dest = strUrl+"?"+setRequestBody();
 		URL host =new URL(dest);
 		HttpURLConnection con = (HttpURLConnection)host.openConnection();
 		strResult = readStream(con.getInputStream());
@@ -69,6 +63,7 @@ public class ConnectServer extends AsyncTask<String, Integer, String>{
 			e.printStackTrace();
 		}
 		return strResult;
+		
 	}
 	private String readStream(InputStream inputStream) {
 		BufferedReader reader=null;
@@ -93,6 +88,7 @@ public class ConnectServer extends AsyncTask<String, Integer, String>{
 		}
 		return sb.toString();
 	}
+
 	private String setRequestBody() throws UnsupportedEncodingException{
 		// TODO Auto-generated method stub
 		StringBuilder sb = new StringBuilder();
@@ -107,4 +103,5 @@ public class ConnectServer extends AsyncTask<String, Integer, String>{
 		}
 		return sb.toString();
 	}
+
 }
