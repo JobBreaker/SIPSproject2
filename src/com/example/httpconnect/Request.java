@@ -5,6 +5,9 @@ public class Request {
 	public static final String REQUEST_RESERVATION = "2000";
 	public static final String REQUEST_TRACKING = "3000";
 	public static final String REQUEST_LOGIN = "9000";
+	public static final String REQUEST_LOGIN_FIRST = "9001";
+	public static final String REQUEST_LOGIN_RESERVATION = "9002";
+	public static final String REQUEST_LOGIN_PARKING = "9003";
 	
 	public static final String RESPOND_REQUEST = "request";
 	public static final String RESPOND_STATUS = "success";

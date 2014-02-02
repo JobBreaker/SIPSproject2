@@ -4,13 +4,16 @@ package com.example.sipsproject2;
 
 import com.example.scanner.ZBarConstants;
 import com.example.scanner.ZBarScannerActivity;
+import com.example.sipstool.PreferencesName;
 import com.example.sqlite.LogDatasource;
 
 import android.os.Bundle;
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.text.TextUtils;
 import android.view.Menu;
 import android.view.View;
@@ -26,7 +29,7 @@ public class TrackingActivity extends Activity {
     private static final int HISTORY_REQUEST = 100;
     private static final int SCAN_BUTTON = 1000;
     private static final int TRACKING_BUTTON = 2000;
-    
+    SharedPreferences share;
     TextView tv1;
     RelativeLayout layout,route_layout;
     boolean layout_yourcar_visible = false;
@@ -39,11 +42,13 @@ public class TrackingActivity extends Activity {
 		setContentView(R.layout.activity_tracking);
 		Button qrButton = (Button)findViewById(R.id.butt_track_scan);
 		Button historyButton = (Button)findViewById(R.id.butt_track_show_history);
+		share = getSharedPreferences(PreferencesName.PREFERENCES_NAME, Context.MODE_PRIVATE);
 		route_layout = (RelativeLayout)findViewById(R.id.car_route_layout);
 		RelativeLayout carButton = (RelativeLayout)findViewById(R.id.butt_your_car);
 		RelativeLayout trackingButton = (RelativeLayout)findViewById(R.id.butt_tracking);
 		layout = (RelativeLayout)findViewById(R.id.car_detail_layout);
 		tv1 = (TextView)findViewById(R.id.car_pos);
+		tv1.setText("Your car is "+share.getString(PreferencesName.PREF_KEY_CAR_POSITION, "no data"));
 		//database SQL Load
 
 
@@ -151,6 +156,9 @@ public class TrackingActivity extends Activity {
             	    datasource.open();
             	    datasource.createComment(data.getStringExtra(ZBarConstants.SCAN_RESULT));
                     tv1.setText("Your car is " + data.getStringExtra(ZBarConstants.SCAN_RESULT));
+                    SharedPreferences.Editor edit=share.edit();
+                    edit.putString(PreferencesName.PREF_KEY_CAR_POSITION, data.getStringExtra(ZBarConstants.SCAN_RESULT));
+                    edit.commit();
                     datasource.close();
                 } else if(resultCode == RESULT_CANCELED && data != null) {
                     String error = data.getStringExtra(ZBarConstants.ERROR_INFO);

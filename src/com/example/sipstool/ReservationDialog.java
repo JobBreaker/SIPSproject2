@@ -57,7 +57,7 @@ public class ReservationDialog extends Dialog implements android.view.View.OnCli
 				@Override
 				public void onItemSelected(AdapterView<?> parent, View view,
 						int position, long id) {
-					mall_id = position;
+					mall_id = position+1;
 					parent.getItemAtPosition(position);
 				}
 

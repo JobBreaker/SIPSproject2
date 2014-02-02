@@ -3,8 +3,11 @@ package com.example.sipsproject2;
 import java.util.ArrayList;
 
 import org.apache.http.message.BasicNameValuePair;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import com.example.httpconnect.PostTask;
+import com.example.sipstool.LoginDialog;
 import com.example.sipstool.PreferencesName;
 
 import android.os.Bundle;
@@ -16,6 +19,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -23,7 +27,6 @@ import android.widget.Toast;
 public class MemberActivity extends Activity {
 	public final String REQUEST_LOGIN = "9000";
 	SharedPreferences share;
-	EditText userBox,passBox;
 	String user,password;
 	boolean isLogin;
 	
@@ -33,35 +36,55 @@ public class MemberActivity extends Activity {
 		setContentView(R.layout.activity_member);
 		share =getSharedPreferences(PreferencesName.PREFERENCES_NAME, Context.MODE_PRIVATE);
 		isLogin = share.getBoolean(PreferencesName.PREF_KEY_LOGIN_STATUS, false);
-		Button loginButton = (Button)findViewById(R.id.butt_member_login);
-		userBox = (EditText)findViewById(R.id.member_id_box);
-		passBox = (EditText)findViewById(R.id.member_pass_box);
-		loginButton.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				ArrayList<BasicNameValuePair>data = new ArrayList<BasicNameValuePair>();
-				user = userBox.getText().toString();
-				password = passBox.getText().toString();
-				data.add(new BasicNameValuePair("request", REQUEST_LOGIN));
-				data.add(new BasicNameValuePair("user", user));
-				data.add(new BasicNameValuePair("pass", password));
-				 PostTask task = new PostTask(MemberActivity.this, data);
-		    	 task.execute("http://158.108.34.17/mobile/login/login.php");
-			}
-		});			
+		if (isLogin==false){
+			goLogin(MemberActivity.this);
+		}
+		
 	}
-	public void checkLogin(int bool){
+	
+	public void goLogin(Context context){
+		LoginDialog dialog = new LoginDialog(MemberActivity.this);
+		dialog.show();
+	}
+	public void FirstCheck(int bool){
 		if (bool ==1){
-		isLogin = true;
+			isLogin = true;
+			SharedPreferences.Editor edit = share.edit();
+			edit.putBoolean(PreferencesName.PREF_KEY_LOGIN_STATUS, true);
+			edit.putString(PreferencesName.PREF_KEY_USER_ID, user);
+			edit.putString(PreferencesName.PREF_KEY_PASSWORD, password);
+			edit.commit();
+			}
+			else{
+			}
+		
+	}
+	public void checkLogin(int bool,String message){
 		SharedPreferences.Editor edit = share.edit();
+		String firstname,lastname,tel;
+		if (bool ==1){
+		isLogin = true;	
+		try {
+			
+			JSONObject json = new JSONObject(message);
+			firstname = json.getString("firstname");
+			lastname = json.getString("lastname");
+			tel = json.getString("tel");
+			edit.putString(PreferencesName.PREF_KEY_FIRSTNAME, firstname);
+			edit.putString(PreferencesName.PREF_KEY_LASTNAME, lastname);
+			edit.putString(PreferencesName.PREF_KEY_TELEPHONE, tel);
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		edit.putBoolean(PreferencesName.PREF_KEY_LOGIN_STATUS, true);
-		edit.putString(PreferencesName.PREF_KEY_USER_ID, user);
-		edit.putString(PreferencesName.PREF_KEY_PASSWORD, password);
 		edit.commit();
-		finish();
 		}
 		else{
-			Toast.makeText(this, "Login Failed Incorrect User Or Password", Toast.LENGTH_SHORT).show();
+			edit.putBoolean(PreferencesName.PREF_KEY_LOGIN_STATUS, false);
+			edit.commit();
+			Toast.makeText(this, "Incorrect userId or password", Toast.LENGTH_SHORT);
+			finish();
 		}
 	}
 	

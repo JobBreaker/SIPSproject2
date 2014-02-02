@@ -19,10 +19,13 @@ import org.json.JSONObject;
 
 import com.example.sipsproject2.MemberActivity;
 import com.example.sipsproject2.PrivillegeActivity;
+import com.example.sipstool.PreferencesName;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -30,14 +33,18 @@ import android.widget.Toast;
 public class PostTask extends AsyncTask<String, Void, String>{
 	private Context mContext;
 	private ArrayList<BasicNameValuePair> mData;
+	private  ProgressDialog dialog;
 	public final String RESULT_OK="1";
 	public final String RESULT_FAILED ="0";
 	public PostTask(Context context,ArrayList<BasicNameValuePair>data){
 		mContext = context;
 		mData = data;
+		dialog = new ProgressDialog(mContext);
 	}
 	protected void onPreExecute(){
-        
+        dialog.setMessage("Please Waiting...");
+        dialog.setTitle("Send Request");
+        dialog.show();
     }
 	@Override
 	protected String doInBackground(String... params) {
@@ -47,16 +54,35 @@ public class PostTask extends AsyncTask<String, Void, String>{
 	@SuppressLint("ShowToast")
 	@Override
 	protected void onPostExecute(String result){
+		dialog.dismiss();
 		try {
 			JSONObject json = new JSONObject(result);
 			String requestNumber = json.getString(Request.RESPOND_REQUEST);
 			if (requestNumber.equals(Request.REQUEST_VALET)) {
-	    	((PrivillegeActivity)mContext).cannotConnectToServer(result);}
+			   if (json.getString(Request.RESPOND_STATUS).equals(RESULT_OK))
+			   ((PrivillegeActivity)mContext).ValetCompleteMessage(true);
+			   else{
+				   ((PrivillegeActivity)mContext).ValetCompleteMessage(false);
+			   }
+			}
 			else if (requestNumber.equals(Request.REQUEST_RESERVATION)){
-				((PrivillegeActivity)mContext).cannotConnectToServer(result);
+				if (json.getString(Request.RESPOND_STATUS).equals(RESULT_OK)){
+				((PrivillegeActivity)mContext).ReservationMessage(true,json.getString(Request.RESPOND_MESSAGE));
+				}
+				else{
+				((PrivillegeActivity)mContext).ReservationMessage(false,json.getString(Request.RESPOND_MESSAGE));
+				}
 			}
 			else if (requestNumber.equals(Request.REQUEST_LOGIN)){
-				((MemberActivity)mContext).checkLogin(json.getInt(Request.RESPOND_STATUS));
+				((MemberActivity)mContext).checkLogin(json.getInt(Request.RESPOND_STATUS),json.getString(Request.RESPOND_MESSAGE));	//checkLogin(json.getInt(Request.RESPOND_STATUS));
+			}
+			else if(requestNumber.equals(Request.REQUEST_LOGIN_RESERVATION)){
+				if (json.getString(Request.RESPOND_STATUS).equals(RESULT_OK)){
+					((PrivillegeActivity)mContext).Login(true,json.getString(Request.RESPOND_MESSAGE));
+					}
+					else{
+					((PrivillegeActivity)mContext).Login(false,json.getString(Request.RESPOND_MESSAGE));
+					}
 			}
 		} catch (JSONException e) {
 			// TODO Auto-generated catch block
@@ -115,5 +141,7 @@ public class PostTask extends AsyncTask<String, Void, String>{
 		}
 		return sb.toString();
 	}
+	
+	
 
 }
