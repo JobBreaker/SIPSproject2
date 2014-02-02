@@ -20,7 +20,8 @@ import android.widget.Toast;
 
 
 public class ValetDialogBox extends Dialog implements android.view.View.OnClickListener{
-	public Context context;
+	public final String REQUEST_VALET = "1000";
+	Context context;
 	public Dialog dialog;
 	public Button yesButton,noButton;
 	public EditText valetEditText,telEditBox;
@@ -40,8 +41,6 @@ public class ValetDialogBox extends Dialog implements android.view.View.OnClickL
 	    telEditBox = (EditText)findViewById(R.id.tel_input);
 	    yesButton.setOnClickListener(this);
 	    noButton.setOnClickListener(this);
-	    
-
 	  }
 	
 	@Override
@@ -58,7 +57,7 @@ public class ValetDialogBox extends Dialog implements android.view.View.OnClickL
 		      else{
 		    	  data.add(new BasicNameValuePair("valet_id",valetId));
 		    	  data.add(new BasicNameValuePair("tel", tel));
-		    	  data.add(new BasicNameValuePair("request", "1000"));
+		    	  data.add(new BasicNameValuePair("request", REQUEST_VALET));
 		    	  PostTask task = new PostTask(context, data);
 		    	  task.execute("http://158.108.34.17/mobile/valet/insert_valet.php");
 		    	  dismiss();}

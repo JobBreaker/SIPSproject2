@@ -19,8 +19,6 @@ import android.widget.Toast;
 public class PrivillegeActivity extends Activity {
 	RelativeLayout valetButton,reservationButton;
 	OnClickListener onclick1;
-	private static ConnectServer connectServer;
-	private static String url_name = "http://158.108.34.17/mobile/valet/insert_valet.php";
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -62,6 +60,7 @@ public class PrivillegeActivity extends Activity {
 	
 	private void showValetDialog() {
 		ValetDialogBox valet = new ValetDialogBox(PrivillegeActivity.this);
+		valet.setTitle("Velet Service Request");
 		valet.show();
 	}
 	

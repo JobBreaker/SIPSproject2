@@ -1,7 +1,11 @@
 package com.example.sipstool;
 
+import java.util.ArrayList;
+
+import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONObject;
 
+import com.example.httpconnect.PostTask;
 import com.example.json.ReservationJSON;
 import com.example.sipsproject2.R;
 
@@ -17,12 +21,17 @@ import android.widget.Spinner;
 import android.widget.AdapterView.OnItemSelectedListener;
 
 public class ReservationDialog extends Dialog implements android.view.View.OnClickListener{
+	final String REQUEST_RESERVATION = "2000";
 	EditText customId,privillegeId;
 	Button reservationButton,cancelButton;
+	Context mContext;
+	String targetURL ="http://158.108.34.17/myproject/index.php/mobile";
 	String [] list = new String[]{"Central Ladprao","Central Rama9","The Mall Ngamwongwan"};
+	int mall_id = 0;
 	Spinner spin;
 	public ReservationDialog(Context context) {
 		super(context);
+		 mContext = context;
 		 setContentView(R.layout.reservation_dialog);
 		 customId = (EditText)findViewById(R.id.editText1);
 		 privillegeId = (EditText)findViewById(R.id.editText2);
@@ -43,6 +52,7 @@ public class ReservationDialog extends Dialog implements android.view.View.OnCli
 				@Override
 				public void onItemSelected(AdapterView<?> parent, View view,
 						int position, long id) {
+					mall_id = position;
 					parent.getItemAtPosition(position);
 				}
 
@@ -56,10 +66,16 @@ public class ReservationDialog extends Dialog implements android.view.View.OnCli
 	}
 	@Override
 	public void onClick(View v) {
+		ArrayList<BasicNameValuePair>data = new ArrayList<BasicNameValuePair>();
 		switch(v.getId()){
 		case R.id.btn_confirm:
-			
-			dismiss();
+			  data.add(new BasicNameValuePair("request", REQUEST_RESERVATION));
+			  data.add(new BasicNameValuePair("user", "user1"));
+			  data.add(new BasicNameValuePair("pass", "1234"));
+			  data.add(new BasicNameValuePair("mall", String.valueOf(mall_id)));
+	    	  PostTask task = new PostTask(mContext, data);
+	    	  task.execute(targetURL);
+	    	  dismiss();
 			break;
 		case R.id.btn_cancel:
 			dismiss();
@@ -69,10 +85,6 @@ public class ReservationDialog extends Dialog implements android.view.View.OnCli
 		}
 		
 	}
-	public ReservationJSON setJSON(){
-		ReservationJSON json = new ReservationJSON(customId.getText().toString(), privillegeId.getText().toString()
-				, spin.getSelectedItemId()*1000, "18:12:14");
-		return json;
-	}
+
 
 }
