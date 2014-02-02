@@ -17,6 +17,7 @@ import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import com.example.sipsproject2.MemberActivity;
 import com.example.sipsproject2.PrivillegeActivity;
 
 import android.annotation.SuppressLint;
@@ -35,6 +36,9 @@ public class PostTask extends AsyncTask<String, Void, String>{
 		mContext = context;
 		mData = data;
 	}
+	protected void onPreExecute(){
+        
+    }
 	@Override
 	protected String doInBackground(String... params) {
 		return PostData(params[0]);
@@ -45,7 +49,15 @@ public class PostTask extends AsyncTask<String, Void, String>{
 	protected void onPostExecute(String result){
 		try {
 			JSONObject json = new JSONObject(result);
-	    	((PrivillegeActivity)mContext).cannotConnectToServer(result);
+			String requestNumber = json.getString(Request.RESPOND_REQUEST);
+			if (requestNumber.equals(Request.REQUEST_VALET)) {
+	    	((PrivillegeActivity)mContext).cannotConnectToServer(result);}
+			else if (requestNumber.equals(Request.REQUEST_RESERVATION)){
+				((PrivillegeActivity)mContext).cannotConnectToServer(result);
+			}
+			else if (requestNumber.equals(Request.REQUEST_LOGIN)){
+				((MemberActivity)mContext).checkLogin(json.getInt(Request.RESPOND_STATUS));
+			}
 		} catch (JSONException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

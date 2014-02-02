@@ -1,11 +1,18 @@
 package com.example.sipsproject2;
  
 import static com.example.sipstool.Constants.IMAGES;
+
+import java.util.ArrayList;
+
+import org.apache.http.message.BasicNameValuePair;
+
 import com.example.sipstool.Constants.Extra;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
 import android.app.TabActivity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.View;
@@ -16,20 +23,13 @@ import android.widget.TabHost.TabSpec;
  
 public class MainActivity extends TabActivity {
 	protected ImageLoader imageLoader = ImageLoader.getInstance();
+	
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
- 
+		setContentView(R.layout.activity_main);		
 		Resources ressources = getResources(); 
 		final TabHost tabHost = getTabHost(); 
-	//	Button homeButton = (Button)findViewById(R.id.home_button);
-		// Android tab
-		/*Intent intentAndroid = new Intent().setClass(this, AndroidActivity.class);
-		TabSpec tabSpecAndroid = tabHost
-		  .newTabSpec("Android")
-		  .setIndicator("", ressources.getDrawable(R.drawable.icon_android_config))
-		  .setContent(intentAndroid);
- */
+
 		Intent parkingIntent = new Intent().setClass(this, ParkingActivity.class);
 		TabSpec tabSpecParking = tabHost.newTabSpec("ParkingActivity").setIndicator("",ressources.getDrawable(R.drawable.butt_parking))
 				.setContent(parkingIntent);
@@ -62,9 +62,10 @@ public class MainActivity extends TabActivity {
 		tabHost.addTab(tabSpecPromotion);
 		tabHost.addTab(tabSpecTracking);
 		//set Windows tab as default (zero based)
-		tabHost.setCurrentTab(2);
-		
+		tabHost.setCurrentTab(2);		
 	}
+	
+	
 	public void onBackPressed() {
 		imageLoader.stop();
 		super.onBackPressed();

@@ -222,79 +222,80 @@ public final class R {
         public static final int tracking=0x7f08000a;
     }
     public static final class string {
-        public static final int about_button=0x7f050012;
-        public static final int about_button_detail=0x7f050013;
-        public static final int action_settings=0x7f050001;
+        public static final int about_button=0x7f050013;
+        public static final int about_button_detail=0x7f050014;
+        public static final int action_settings=0x7f050002;
         public static final int app_name=0x7f050000;
-        public static final int butt_login=0x7f050017;
-        public static final int butt_pri_custom=0x7f050024;
-        public static final int butt_pri_custom_detail=0x7f050027;
-        public static final int butt_pri_reserve=0x7f050023;
-        public static final int butt_pri_reserve_detail=0x7f050026;
+        public static final int butt_login=0x7f050018;
+        public static final int butt_pri_custom=0x7f050025;
+        public static final int butt_pri_custom_detail=0x7f050028;
+        public static final int butt_pri_reserve=0x7f050024;
+        public static final int butt_pri_reserve_detail=0x7f050027;
         /**  Privillege 
          */
-        public static final int butt_pri_valet=0x7f050022;
-        public static final int butt_pri_valet_detail=0x7f050025;
-        public static final int butt_regis=0x7f050018;
-        public static final int butt_reservation=0x7f05002c;
-        public static final int butt_see_park=0x7f05002b;
-        public static final int butt_track_history=0x7f050020;
-        public static final int butt_track_scan=0x7f05001f;
-        public static final int butt_track_search=0x7f05001e;
-        public static final int butt_tracking=0x7f05001c;
-        public static final int butt_tracking_detail=0x7f05001d;
+        public static final int butt_pri_valet=0x7f050023;
+        public static final int butt_pri_valet_detail=0x7f050026;
+        public static final int butt_regis=0x7f050019;
+        public static final int butt_reservation=0x7f05002d;
+        public static final int butt_see_park=0x7f05002c;
+        public static final int butt_track_history=0x7f050021;
+        public static final int butt_track_scan=0x7f050020;
+        public static final int butt_track_search=0x7f05001f;
+        public static final int butt_tracking=0x7f05001d;
+        public static final int butt_tracking_detail=0x7f05001e;
         /**  Tracking 
          */
-        public static final int butt_your_car=0x7f05001a;
-        public static final int butt_your_car_detail=0x7f05001b;
-        public static final int car_pos_is=0x7f050021;
+        public static final int butt_your_car=0x7f05001b;
+        public static final int butt_your_car_detail=0x7f05001c;
+        public static final int car_pos_is=0x7f050022;
         /**  Custom Dialog 
          */
-        public static final int custom_dialog_hint=0x7f050033;
-        public static final int custumer_id=0x7f050037;
-        public static final int desc=0x7f050002;
-        public static final int hello_world=0x7f050003;
-        public static final int input_custumer_id=0x7f050039;
-        public static final int input_pri_id=0x7f05003a;
-        public static final int member=0x7f050006;
+        public static final int custom_dialog_hint=0x7f050034;
+        public static final int custumer_id=0x7f050038;
+        public static final int desc=0x7f050003;
+        public static final int hello_world=0x7f050004;
+        public static final int input_custumer_id=0x7f05003a;
+        public static final int input_pri_id=0x7f05003b;
+        public static final int member=0x7f050007;
         /**  MemberBox 
          */
-        public static final int memberId=0x7f050014;
-        public static final int member_button=0x7f050010;
-        public static final int member_button_detail=0x7f050011;
-        public static final int member_label=0x7f050016;
-        public static final int menu_item_clear_disc_cache=0x7f050030;
+        public static final int memberId=0x7f050015;
+        public static final int member_button=0x7f050011;
+        public static final int member_button_detail=0x7f050012;
+        public static final int member_label=0x7f050017;
+        public static final int menu_item_clear_disc_cache=0x7f050031;
         /**  Menu 
          */
-        public static final int menu_item_clear_memory_cache=0x7f05002f;
-        public static final int menu_item_pause_on_fling=0x7f050032;
-        public static final int menu_item_pause_on_scroll=0x7f050031;
+        public static final int menu_item_clear_memory_cache=0x7f050030;
+        public static final int menu_item_pause_on_fling=0x7f050033;
+        public static final int menu_item_pause_on_scroll=0x7f050032;
         /**  Parking 
          */
-        public static final int more_detail=0x7f050029;
-        public static final int password=0x7f050015;
-        public static final int pri_id=0x7f050038;
-        public static final int privillege=0x7f050007;
-        public static final int promotion=0x7f050008;
-        public static final int refresh=0x7f05002e;
-        public static final int search=0x7f05002d;
+        public static final int more_detail=0x7f05002a;
+        public static final int password=0x7f050016;
+        public static final int preference=0x7f050001;
+        public static final int pri_id=0x7f050039;
+        public static final int privillege=0x7f050008;
+        public static final int promotion=0x7f050009;
+        public static final int refresh=0x7f05002f;
+        public static final int search=0x7f05002e;
         /**  Home String 
          */
-        public static final int setting_button=0x7f05000e;
-        public static final int setting_button_detail=0x7f05000f;
-        public static final int title_activity_activity_group=0x7f050019;
-        public static final int title_activity_history=0x7f050028;
-        public static final int title_activity_home=0x7f05000d;
-        public static final int title_activity_member=0x7f050005;
-        public static final int title_activity_parking=0x7f050004;
-        public static final int title_activity_parking_detail=0x7f05002a;
-        public static final int title_activity_parking_map_floor=0x7f050036;
-        public static final int title_activity_privillege=0x7f05000a;
-        public static final int title_activity_promotion=0x7f05000b;
-        public static final int title_activity_tracking=0x7f05000c;
-        public static final int tracking=0x7f050009;
-        public static final int valet_id=0x7f050034;
-        public static final int valet_tel=0x7f050035;
+        public static final int setting_button=0x7f05000f;
+        public static final int setting_button_detail=0x7f050010;
+        public static final int title_activity_activity_group=0x7f05001a;
+        public static final int title_activity_history=0x7f050029;
+        public static final int title_activity_home=0x7f05000e;
+        public static final int title_activity_member=0x7f050006;
+        public static final int title_activity_parking=0x7f050005;
+        public static final int title_activity_parking_detail=0x7f05002b;
+        public static final int title_activity_parking_map_floor=0x7f050037;
+        public static final int title_activity_privillege=0x7f05000b;
+        public static final int title_activity_promotion=0x7f05000c;
+        public static final int title_activity_tracking=0x7f05000d;
+        public static final int tracking=0x7f05000a;
+        public static final int valet_id=0x7f050035;
+        public static final int valet_tel=0x7f050036;
     }
     public static final class style {
         /** 
