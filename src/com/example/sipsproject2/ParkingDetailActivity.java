@@ -34,7 +34,7 @@ public class ParkingDetailActivity extends Activity implements LocationListener 
 	Button seeButton,reservationButton;
 	private LocationManager locationManager;
 	private String provider;
-	private double lat=13.7500,lng=100.5167;
+	private double lat=13.854516,lng=100.580310;
 	long id;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -156,19 +156,19 @@ public class ParkingDetailActivity extends Activity implements LocationListener 
 	@Override
 	public void onProviderDisabled(String provider) {
 		// TODO Auto-generated method stub
-		 Toast.makeText(ParkingDetailActivity.this,"Provider disabled by the user. GPS turned off",Toast.LENGTH_LONG).show();
+		// Toast.makeText(ParkingDetailActivity.this,"Provider disabled by the user. GPS turned off",Toast.LENGTH_LONG).show();
 
 		
 	}
 
 	@Override
 	public void onProviderEnabled(String provider) {
-		 Toast.makeText(ParkingDetailActivity.this,"Provider enabled by the user. GPS turned on",Toast.LENGTH_LONG).show();
+		 //Toast.makeText(ParkingDetailActivity.this,"Provider enabled by the user. GPS turned on",Toast.LENGTH_LONG).show();
 	}
 
 	@Override
 	public void onStatusChanged(String provider, int status, Bundle extras) {
-		Toast.makeText(ParkingDetailActivity.this,"Provider status changed",Toast.LENGTH_LONG).show();
+		//Toast.makeText(ParkingDetailActivity.this,"Provider status changed",Toast.LENGTH_LONG).show();
 	}
 	
 	public void ReservationMessage(boolean status,String message) {
