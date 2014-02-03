@@ -10,7 +10,8 @@
         android:id="@+id/member_login_box"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
          >
@@ -20,62 +21,72 @@
 	    android:layout_height="@dimen/member_label"
 	    android:layout_width="wrap_content"
 	    android:gravity="center"
-	    android:textColor="#FFFFFF"
+	    android:textColor="#303030"
 	    android:text="@string/member_label"
 	    android:layout_alignParentTop="true"
 	    android:layout_marginLeft="@dimen/activity_vertical_margin"
 	    android:textSize="@dimen/large_textsize1"
 		android:textStyle="bold"	    
 	    />
-    <EditText
-        android:id="@+id/member_id_box"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/custom_button_height"
-        android:layout_marginLeft="@dimen/activity_vertical_margin"
-        android:layout_below="@id/member_label"
-        android:hint="@string/memberId"
-        android:textColor="@android:color/black"
-        android:ems="10" 
-        >
-        <requestFocus />
-    </EditText>
+	
 
-    <EditText
-        android:id="@+id/member_pass_box"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/custom_button_height"
-        android:layout_marginLeft="@dimen/activity_vertical_margin"
-        android:ems="10"
-        android:layout_marginTop="10dp"
-        android:inputType="textPassword" 
-        android:layout_below="@id/member_id_box"
-        android:hint="@string/password"
-        android:textColor="@android:color/black"
-        />
+	
+	<TextView
+	    android:id="@+id/member_firstname"
+	    android:layout_height="@dimen/member_label"
+	    android:layout_width="wrap_content"
+	    android:gravity="center"
+	    android:textColor="#D75f00"
+	    
+	    android:layout_below="@id/member_label"
+	    android:layout_marginLeft="@dimen/activity_vertical_margin"
+	    android:textSize="@dimen/normal_textsize2"
+		android:textStyle="bold"	    
+	    />
+	
+	<TextView
+	    android:id="@+id/member_lastname"
+	    android:layout_height="@dimen/member_label"
+	    android:layout_width="wrap_content"
+	    android:gravity="center"
+	    android:textColor="#D75f00"
+
+	    android:layout_below="@id/member_firstname"
+	    android:layout_marginLeft="@dimen/activity_vertical_margin"
+	    android:textSize="@dimen/normal_textsize2"
+		android:textStyle="bold"	    
+	    />
+		<ImageView 
+	    android:id="@+id/member_profile"
+	    android:layout_width="@dimen/image_picture"
+	    android:layout_height="@dimen/image_picture"
+	    android:contentDescription="@string/desc"
+	    android:layout_alignParentTop="true"
+	    android:layout_alignParentRight="true"
+	    android:src="@drawable/ic_launcher"
+	    />
+	
+	<TextView
+	    android:id="@+id/member_tel"
+	    android:layout_height="@dimen/member_label"
+	    android:layout_width="wrap_content"
+	    android:gravity="center"
+	    android:textColor="#D75f00"
+	    
+	    android:layout_below="@id/member_lastname"
+	    android:layout_marginLeft="@dimen/activity_vertical_margin"
+	    android:textSize="@dimen/normal_textsize2"
+		android:textStyle="bold"	    
+	    />
     
-    <LinearLayout 
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/custom_button_height"
-        android:layout_marginLeft="@dimen/activity_vertical_margin"
-        android:orientation="horizontal"
-        android:layout_below="@id/member_pass_box"
-        >
-        <Button 
-            android:id="@+id/butt_member_login"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1.0"
-            android:text="@string/butt_login"
-            />
-              <Button 
-            android:id="@+id/butt_member_regis"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1.0"
-            android:text="@string/butt_regis"
-            />
-        
-    </LinearLayout>
+    <Button android:id="@+id/member_button_logout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/logout"
+        android:layout_below="@id/member_tel"
+        android:layout_margin="15dp"
+        android:textSize="@dimen/normal_textsize2"
+        ></Button>"
 
     </RelativeLayout>
 	

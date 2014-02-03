@@ -13,6 +13,7 @@ import com.example.sipstool.PreferencesName;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.util.Log;
@@ -22,12 +23,16 @@ import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MemberActivity extends Activity {
 	public final String REQUEST_LOGIN = "9000";
 	SharedPreferences share;
+	TextView firstname,lastname;
+	TextView tel;
 	String user,password;
+	Button bt;
 	boolean isLogin;
 	
 	@Override
@@ -36,12 +41,37 @@ public class MemberActivity extends Activity {
 		setContentView(R.layout.activity_member);
 		share =getSharedPreferences(PreferencesName.PREFERENCES_NAME, Context.MODE_PRIVATE);
 		isLogin = share.getBoolean(PreferencesName.PREF_KEY_LOGIN_STATUS, false);
+		firstname = (TextView)findViewById(R.id.member_firstname);
+		lastname = (TextView)findViewById(R.id.member_lastname);
+		tel = (TextView)findViewById(R.id.member_tel);
+		bt = (Button)findViewById(R.id.member_button_logout);
 		if (isLogin==false){
 			goLogin(MemberActivity.this);
+			
 		}
+		else{
+			setProfile();
+		}
+		bt.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				SharedPreferences.Editor edit = share.edit();
+				edit.clear();
+				edit.commit();
+				finish();
+				
+			}
+		});
 		
 	}
 	
+	private void setProfile() {
+		firstname.setText("Firstname:"+share.getString(PreferencesName.PREF_KEY_FIRSTNAME, "Firstname"));
+		lastname.setText("Lastname:"+share.getString(PreferencesName.PREF_KEY_LASTNAME, "Lastname"));
+		tel.setText("Telephone:"+share.getString(PreferencesName.PREF_KEY_TELEPHONE, "081-547-4949"));
+		
+	}
+
 	public void goLogin(Context context){
 		LoginDialog dialog = new LoginDialog(MemberActivity.this);
 		dialog.show();
@@ -56,6 +86,7 @@ public class MemberActivity extends Activity {
 			edit.commit();
 			}
 			else{
+				finish();
 			}
 		
 	}
@@ -79,11 +110,14 @@ public class MemberActivity extends Activity {
 		}
 		edit.putBoolean(PreferencesName.PREF_KEY_LOGIN_STATUS, true);
 		edit.commit();
+		Intent i = getIntent();
+		finish();
+		startActivity(i);
 		}
 		else{
 			edit.putBoolean(PreferencesName.PREF_KEY_LOGIN_STATUS, false);
 			edit.commit();
-			Toast.makeText(this, "Incorrect userId or password", Toast.LENGTH_SHORT);
+			Toast.makeText(this, "Incorrect userId or password", Toast.LENGTH_SHORT).show();
 			finish();
 		}
 	}

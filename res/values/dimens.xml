@@ -25,6 +25,7 @@
     
     <!-- text label -->
     <dimen name ="member_label">40dp</dimen>
+    <dimen name ="image_picture">100dp</dimen>
     <!-- Text Size -->
     <dimen name="small_textsize1">10sp</dimen>
     <dimen name="small_textsize2">12sp</dimen>
