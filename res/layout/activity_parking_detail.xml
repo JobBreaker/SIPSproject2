@@ -17,15 +17,14 @@
 	        <LinearLayout 
 	            android:layout_width="match_parent"
 	            android:layout_height="0dp"
-	            android:layout_weight="1.25"
+	            android:layout_weight="1.00"
 	            android:orientation="horizontal"
 	            >
 	        <ImageView 
 	            android:id="@+id/imv_parking_detail_logo"
 	            android:layout_width="0dp"
 	            android:layout_height="match_parent"
-	            android:layout_weight="1.0"
-	            android:layout_gravity="center"
+	            android:layout_weight="1.00"
 	            android:contentDescription="@string/desc"
 	            android:background="@android:color/transparent"
 	            />
@@ -35,7 +34,7 @@
 	        	android:layout_height="match_parent"
 	        	android:layout_weight="1.7"
 	        	android:orientation="vertical"
-	        	android:layout_marginTop="10dp"
+	        	android:layout_marginTop="5dp"
 	            >
 	            <TextView 
 	                android:id="@+id/tv_parking_detail_full_name"
@@ -79,7 +78,7 @@
 	                android:id="@+id/tv_parking_detail_full_shopping"
 	                android:layout_width="match_parent"
 	                android:layout_height="0dp"
-	                android:layout_weight="0.6"
+	                android:layout_weight="0.42"
 	                android:textColor="#FFFFFF"
 	                android:textSize="@dimen/small_textsize3"	                
 	                />
@@ -87,7 +86,7 @@
 	                android:id="@+id/tv_parking_detail_full_dinning"
 	                android:layout_width="match_parent"
 	                android:layout_height="0dp"
-	                android:layout_weight="0.6"
+	                android:layout_weight="0.42"
 	                android:textColor="#FFFFFF"
 	                android:textSize="@dimen/small_textsize3"	                
 	                />
@@ -96,7 +95,7 @@
 	          android:id="@+id/imv_parking_detail_map"
 	          android:layout_width="wrap_content"
 	          android:layout_height="0dp"
-	          android:layout_weight="1.1"
+	          android:layout_weight="1.40"
 	          android:contentDescription="@string/desc"
 	          android:background="@android:color/transparent"
 	          /> 
@@ -104,8 +103,8 @@
 	           android:id="@+id/rl_parking_button_group"
 	           android:layout_width="wrap_content"
 	           android:layout_height="0dp"
-	           android:layout_weight="0.5"
-	           android:layout_marginTop="15dp"
+	           android:layout_weight="0.35"
+	           android:layout_marginTop="10dp"
 	           android:layout_gravity="center"
 	           >
 	           <Button 
