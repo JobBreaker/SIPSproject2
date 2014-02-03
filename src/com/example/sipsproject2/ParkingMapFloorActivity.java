@@ -39,10 +39,14 @@ public class ParkingMapFloorActivity extends Activity {
 		spinner = (Spinner)findViewById(R.id.spinner_car_map);
 		web = (WebView)findViewById(R.id.webView1);
 		web.getSettings().setJavaScriptEnabled(true);
-		web.loadUrl("http://158.108.34.17/myproject/index.php/map?mall=1&&floor=1");
+		web.loadUrl("http://158.108.34.17/myproject/index.php/map?mall="+id+"&&floor=1");
 		parking = ParkingDetailActivity.receiveData(id);
 		setHeader(parking);
-		logo.setImageResource(R.drawable.central);
+		if (parking.getLogotype()==1){
+		logo.setImageResource(R.drawable.central);}
+		else{
+			logo.setImageResource(R.drawable.themall2);
+		}
 		setItemOnSpinner();
 	}
 
@@ -67,6 +71,7 @@ public class ParkingMapFloorActivity extends Activity {
 			public void onItemSelected(AdapterView<?> parent, View view,
 					int position, long id) {
 				parent.getItemAtPosition(position);
+				web.loadUrl("http://158.108.34.17/myproject/index.php/map?mall="+parking.getId()+"&&floor="+(position+1));
 			}
 
 			@Override

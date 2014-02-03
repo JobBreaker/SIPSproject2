@@ -1,11 +1,9 @@
 package com.example.sipsproject2;
 
 
-import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import com.example.httpconnect.ConnectServer;
 import com.example.httpconnect.Request;
 import com.example.sipstool.LoginDialog;
 import com.example.sipstool.PreferencesName;
@@ -15,8 +13,7 @@ import com.example.sipstool.ValetDialogBox;
 import android.os.Bundle;
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.Dialog;
-import android.app.AlertDialog.Builder;
+
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
@@ -82,7 +79,7 @@ public class PrivillegeActivity extends Activity {
 	}
 	
 	private void showReservationDialog(){
-		ReservationDialog reservation = new ReservationDialog(PrivillegeActivity.this);
+		ReservationDialog reservation = new ReservationDialog(PrivillegeActivity.this,1,Request.REQUEST_RESERVATION_FROM_PARKING);
 		reservation.setTitle("Reservation");
 		reservation.show();	
 	}

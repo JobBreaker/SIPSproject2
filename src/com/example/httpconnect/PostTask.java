@@ -4,12 +4,11 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.io.OutputStream;
+
 import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.net.URLEncoder;
-import java.nio.charset.Charset;
+
 import java.util.ArrayList;
 
 import org.apache.http.NameValuePair;
@@ -18,18 +17,18 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import com.example.sipsproject2.MemberActivity;
+import com.example.sipsproject2.ParkingDetailActivity;
 import com.example.sipsproject2.PrivillegeActivity;
 import com.example.sipsproject2.TrackingActivity;
-import com.example.sipstool.PreferencesName;
+
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
+
 import android.app.ProgressDialog;
 import android.content.Context;
-import android.content.SharedPreferences;
+
 import android.os.AsyncTask;
-import android.widget.TextView;
-import android.widget.Toast;
+
 
 public class PostTask extends AsyncTask<String, Void, String>{
 	private Context mContext;
@@ -92,6 +91,14 @@ public class PostTask extends AsyncTask<String, Void, String>{
 				else{
 					((TrackingActivity)mContext).loadWebview( false, json.getString(Request.RESPOND_MESSAGE));
 				}
+			}
+			else if(requestNumber.equals(Request.REQUEST_RESERVATION_FROM_PARKING)){
+				if (json.getString(Request.RESPOND_STATUS).equals(RESULT_OK)){
+					((ParkingDetailActivity)mContext).ReservationMessage(true,json.getString(Request.RESPOND_MESSAGE));
+					}
+					else{
+					((ParkingDetailActivity)mContext).ReservationMessage(false,json.getString(Request.RESPOND_MESSAGE));
+					}
 			}
 		} catch (JSONException e) {
 			// TODO Auto-generated catch block

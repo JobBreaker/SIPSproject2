@@ -3,6 +3,7 @@ package com.example.httpconnect;
 public class Request {
 	public static final String REQUEST_VALET = "1000";
 	public static final String REQUEST_RESERVATION = "2000";
+	public static final String REQUEST_RESERVATION_FROM_PARKING = "2020";
 	public static final String REQUEST_TRACKING = "3000";
 	public static final String REQUEST_LOGIN = "9000";
 	public static final String REQUEST_LOGIN_FIRST = "9001";

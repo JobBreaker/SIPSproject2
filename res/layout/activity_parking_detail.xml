@@ -95,7 +95,7 @@
 	          android:id="@+id/imv_parking_detail_map"
 	          android:layout_width="wrap_content"
 	          android:layout_height="0dp"
-	          android:layout_weight="1.40"
+	          android:layout_weight="1.36"
 	          android:contentDescription="@string/desc"
 	          android:background="@android:color/transparent"
 	          /> 
@@ -103,7 +103,7 @@
 	           android:id="@+id/rl_parking_button_group"
 	           android:layout_width="wrap_content"
 	           android:layout_height="0dp"
-	           android:layout_weight="0.35"
+	           android:layout_weight="0.4"
 	           android:layout_marginTop="10dp"
 	           android:layout_gravity="center"
 	           >
