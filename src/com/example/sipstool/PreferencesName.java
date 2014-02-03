@@ -13,5 +13,6 @@ public class PreferencesName {
 	public static final String PREF_KEY_TELEPHONE="tel";
 	public static final String PREF_KEY_CAR_POSITION="car_pos";
 	public static final String PREF_KEY_CAR_FLOOR="car_floor";
+	public static final String PREF_KEY_CAR_MALL="mall";
 
 }

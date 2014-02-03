@@ -19,6 +19,7 @@ import org.json.JSONObject;
 
 import com.example.sipsproject2.MemberActivity;
 import com.example.sipsproject2.PrivillegeActivity;
+import com.example.sipsproject2.TrackingActivity;
 import com.example.sipstool.PreferencesName;
 
 import android.annotation.SuppressLint;
@@ -83,6 +84,14 @@ public class PostTask extends AsyncTask<String, Void, String>{
 					else{
 					((PrivillegeActivity)mContext).Login(false,json.getString(Request.RESPOND_MESSAGE));
 					}
+			}
+			else if (requestNumber.equals(Request.REQUEST_TRACKING)){
+				if (json.getString(Request.RESPOND_STATUS).equals(RESULT_OK)){
+					((TrackingActivity)mContext).loadWebview( true, json.getString(Request.RESPOND_MESSAGE));
+				}
+				else{
+					((TrackingActivity)mContext).loadWebview( false, json.getString(Request.RESPOND_MESSAGE));
+				}
 			}
 		} catch (JSONException e) {
 			// TODO Auto-generated catch block
