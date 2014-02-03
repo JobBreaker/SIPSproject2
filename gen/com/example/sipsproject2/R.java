@@ -252,8 +252,9 @@ containing a value of this type.
         public static final int promotion=0x7f02002f;
         public static final int shoping1=0x7f020030;
         public static final int sisp1=0x7f020031;
-        public static final int track=0x7f020032;
-        public static final int tracking=0x7f020033;
+        public static final int themall2=0x7f020032;
+        public static final int track=0x7f020033;
+        public static final int tracking=0x7f020034;
     }
     public static final class id {
         public static final int about_detail=0x7f050007;

@@ -7,12 +7,13 @@ import com.google.android.gms.maps.model.LatLng;
 public class ParkingDetailObject {
 	long id;
 	private String name,attractions,privillege,address,contact,shopping,dining;
-	private URI logo,map;LatLng latlng;
+	private int logo;LatLng latlng;
+	private int capacity;
 	public ParkingDetailObject(long id){
 		this.id = id;
 	}
 	public ParkingDetailObject(long id,String name,String attractions,String privillege,String address,
-			String contact,String shopping,String dining,URI logo,URI map,LatLng latlng){
+			String contact,String shopping,String dining,int logo,LatLng latlng,int capacity){
 	this.id = id;
 	this.name = name;
 	this.attractions = attractions;
@@ -22,8 +23,8 @@ public class ParkingDetailObject {
 	this.shopping = shopping;
 	this.dining = dining;
 	this.logo = logo;
-	this.map = map;
 	this.latlng = latlng;
+	this.capacity = capacity;
 	}
 	
 	public void setName(String name){
@@ -51,13 +52,15 @@ public class ParkingDetailObject {
 	public void setDining(String dining){
 		this.dining = dining;
 	}
-	public void setURI(URI logo,URI map){
-		this.logo = logo; this.map = map;
+	public void setURI(int logo){
+		this.logo = logo;
 	}
 	public void setLatLng(LatLng latlng){
 		this.latlng = latlng;
 	}
-	
+	public void setCapacity(int capacity){
+		this.capacity = capacity;
+	}
 	public long getId(){
 		return this.id;
 	}
@@ -82,14 +85,15 @@ public class ParkingDetailObject {
 	public String getDining(){
 		return this.dining;
 	}
-	public URI getLogoURI(){
+	public int getLogotype(){
 		return this.logo;
 	}
-	public URI getMapURI(){
-		return this.map;
-	}
+
 	public LatLng getLatLng(){
 		return this.latlng;
+	}
+	public int getCapacity(){
+		return this.capacity;
 	}
 	public boolean haveValetParking(){
 		if (this.privillege.contains("valet")){

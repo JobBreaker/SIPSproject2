@@ -3,7 +3,9 @@ package com.example.sipsproject2;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.example.json.ParkingDetailObject;
 import com.example.json.ParkingObject;
+import com.example.sipstool.Constants;
 import com.example.sipstool.ParkingListAdapter;
 
 import android.os.Bundle;
@@ -23,14 +25,14 @@ public class ParkingActivity extends ListActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_parking);
-		List<ParkingObject> list = genParkingObject(10);
+		List<ParkingDetailObject> list = Constants.getParkingObject();
 		adapter = new ParkingListAdapter(this, list);
 		getListView().setOnItemClickListener(new OnItemClickListener(){
 			@Override
 			public void onItemClick(AdapterView<?> parent, View v, int position,
 					long id) {
 				Intent i = new Intent(v.getContext(),ParkingDetailActivity.class);
-				ParkingObject object = (ParkingObject) parent.getItemAtPosition(position);
+				ParkingDetailObject object = (ParkingDetailObject) parent.getItemAtPosition(position);
 				i.putExtra("id", object.getId());
 				try {
 				startActivity(i);}
