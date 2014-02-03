@@ -27,6 +27,7 @@ public class HomeActivity extends Activity {
 		onclick1 = new OnClickListener(){
 			@Override
 			public void onClick(View v) {
+				int id = v.getId();
 				switch (v.getId()){
 				case R.id.butt_about:
 					

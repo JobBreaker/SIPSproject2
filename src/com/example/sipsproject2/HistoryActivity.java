@@ -63,11 +63,11 @@ public class HistoryActivity extends ListActivity {
   public void onClick(View view) {
    // @SuppressWarnings("unchecked")
     //ArrayAdapter<QrLog> adapter = (ArrayAdapter<QrLog>) getListAdapter();
-    switch (view.getId()) {
-    case R.id.add:
+    int id = view.getId(); 
+    if (id== R.id.add){
       datasource.deleteAllComment();
       reload();
-      break;
+      
     }
    // adapter.notifyDataSetChanged();
   }
