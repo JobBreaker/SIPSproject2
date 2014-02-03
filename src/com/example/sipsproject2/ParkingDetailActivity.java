@@ -1,6 +1,9 @@
 package com.example.sipsproject2;
 
+import java.util.ArrayList;
+
 import com.example.json.ParkingDetailObject;
+import com.example.sipstool.Constants;
 import com.example.sipstool.ReservationDialog;
 
 import android.os.Bundle;
@@ -42,7 +45,11 @@ public class ParkingDetailActivity extends Activity {
 		contactTV.setText("Contact: "+objects.getContact());
 		shoppingTV.setText("Shopping Store: "+objects.getShopping());
 		diningTV.setText("Dining Restaurants: "+objects.getDining());
-		logoImage.setImageResource(R.drawable.central);
+		if (objects.getLogotype()==1){
+		logoImage.setImageResource(R.drawable.central);}
+		else{
+			logoImage.setImageResource(R.drawable.themall2);
+		}
 		mapImage.setImageResource(R.drawable.map);
 		OnClickListener click = setClickListener();
 		seeButton.setOnClickListener(click);
@@ -74,15 +81,14 @@ public class ParkingDetailActivity extends Activity {
 		return click;
 	}
 	public static ParkingDetailObject receiveData(long id){
-		ParkingDetailObject o=new ParkingDetailObject(id);
-		o.setName("Central Ladprao");
-		o.setAttractions("shopping,dining");
-		o.setPrivillege("valet,reservation");
-		o.setAddress("1691 Phoholyothin Rd,Chatuchak,Bangkok,Thailand");
-		o.setContact("Tel.(66)2561 1234,Email: cglb@chr.co.th");
-		o.setShopping("WRANGERLER LEVEL DR.MARTEEN OKAKA INUMUCHI GORINDSE BG KKNT DOKE ADIDOS PIKA");
-		o.setDining("FUJICHI KOKOCHIBUNYA MISUKI SHABICHI OYAYA KFG MCDONUT SUKURABU BEERU SIZZSELER");
-		return o;
+		ArrayList<ParkingDetailObject> o=Constants.getParkingObject();
+		for(int i=0;i<o.size();i++){
+			ParkingDetailObject items = o.get(i);
+			if (items.getId()==id){
+			 return items;
+			 }
+		}
+		return null;
 	}
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
